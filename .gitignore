@@ -90,3 +90,6 @@ ENV/
 
 # Jupyter notebook
 .ipynb_checkpoints
+
+*octave-workspace*
+*token.mat*
