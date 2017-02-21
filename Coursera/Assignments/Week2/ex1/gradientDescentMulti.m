@@ -17,15 +17,14 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
-
-
-
-
-
-
-
-
-
+    %the difference between the predicted values and the real ones
+    diff = X * theta - y;
+   
+    %apply the derived function of the cost, to find the direction to go
+    delta = (1/m) * sum((diff .* X));
+    
+    %update theta with the delta, according to the learning rate
+    theta = theta - (alpha*delta)';
 
     % ============================================================
 

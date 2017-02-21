@@ -14,7 +14,7 @@ J = 0;
 %               You should set J to the cost.
 
 %predicted value
-h = (X * theta)
+h = (X * theta);
 
 %apply the formula
 J = sum((h - y) .^ 2) / (2 * m);

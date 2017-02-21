@@ -28,7 +28,7 @@ for iter = 1:num_iters
     delta = (1/m) * sum((diff .* X));
     
     %update theta with the delta, according to the learning rate
-    theta = theta .- (alpha*delta)';
+    theta = theta - (alpha*delta)';
     
     % ============================================================
 
