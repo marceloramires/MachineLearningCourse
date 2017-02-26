@@ -20,12 +20,18 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+%predicted value, according to the sigmoid function
+h = sigmoid(X * theta);
 
+%apply the vectorized direved cost function for logistic regression with 2
+%classes
+J = (1/m) * (-y' * log(h) - (1-y)' * log(1-h));
 
+%compute the difference from the predicted value to the actual one
+diff = h - y;
 
-
-
-
+%apply the derived function of the cost to find the direction to go (grad)
+grad = (1/m) * sum(diff .* X);
 
 % =============================================================
 
