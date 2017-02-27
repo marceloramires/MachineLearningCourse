@@ -32,9 +32,9 @@ diff = h - y;
 %apply the derived function of the cost to find the direction to go (grad)
 grad = (1/m) * sum(diff .* X);
 
-%diminishing all grads except the first (regularization)
-for item = 2:size(theta)
-    grad(item) = grad(item) + (lambda/(m)) * theta(item);
+%apply regularization (for all items except theta zero)
+regularization = ((lambda/m) .* theta(2:size(theta)))';
+grad(2:size(theta)) = grad(2:size(theta)) + regularization;
 
 % =============================================================
 
