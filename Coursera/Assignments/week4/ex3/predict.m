@@ -21,15 +21,23 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Add extra ones (bias)
+X = [ones(m, 1) X];
 
+% apply second layer on first layer
+a2 = sigmoid(X * Theta1');
 
+% add extra ones (bias)
+a2 = [ones(size(a2, 1), 1) a2];
 
+%apply third layer on second layer
+predAll = sigmoid(a2 * Theta2');
 
+%get the column (class) where the higher probability lies
+[Y,I] = max(predAll, [], 2);
 
-
-
-
+% return predicted classes per training example
+p = I;
 % =========================================================================
-
 
 end
