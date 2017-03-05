@@ -30,13 +30,15 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+predAll = zeros(size(X,1), num_labels);
 
+for i = 1:num_labels   
+    predAll(:,i) = sigmoid(X * all_theta(i,:)');
+end
 
+[Y,I] = max(predAll, [], 2);
 
-
-
+p = I;
 
 % =========================================================================
-
-
 end
