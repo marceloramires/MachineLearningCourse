@@ -30,12 +30,8 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-predAll = zeros(size(X,1), num_labels);
-
-%run prediction for all classes
-for i = 1:num_labels   
-    predAll(:,i) = sigmoid(X * all_theta(i,:)');
-end
+%run prediction for all classes  
+predAll = sigmoid(X * all_theta');
 
 %get the index of the highest probability classes per training example
 [Y,I] = max(predAll, [], 2);
